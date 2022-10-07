@@ -1,6 +1,6 @@
 require("dotenv").config();
-const DiscordUser = require('../models/discordUser');
-const DiscordServer = require('../models/discordServer');
+const DiscordUser = require('../models/DiscordUser');
+const DiscordServer = require('../models/DiscordServer');
 const async = require('async');
 
 const types = {
