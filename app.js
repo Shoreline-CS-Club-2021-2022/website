@@ -15,8 +15,6 @@ const discordAPI = require("./routes/DiscordAPI.js");
 
 const app = express();
 app.use(express.static("public"));
-app.use('/uploads', express.static('uploads'));
-app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({
   extended: true
 }));
@@ -39,6 +37,7 @@ app.set('view engine', 'ejs');
 
 app.use('/', index);
 app.use("/api", discordAPI);
+
 
 app.use(function(err, req, res, next) {
     res.locals.message = err.message;
