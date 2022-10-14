@@ -13,6 +13,8 @@ Once you have the repository cloned, first you need to install all the npm packa
 npm install
 ```
 
+You will also want to setup a secret. Make a copy of the `.env.example` called `.env`. Then add `secret` to the end of the `SECRET=` line.
+
 Then you can host a local version of the website on your computer using:
 ```bash
 npm run start
