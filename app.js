@@ -10,6 +10,8 @@ const port = process.env.PORT || 3000;
 
 const User = require('./models/User');
 const index = require('./routes/index.js');
+const auth = require("./routes/auth.js");
+const admin = require("./routes/admin");
 const discordAPI = require("./routes/DiscordAPI.js");
 
 
@@ -37,6 +39,8 @@ app.set('view engine', 'ejs');
 
 app.use('/', index);
 app.use("/api", discordAPI);
+app.use("/auth", auth);
+app.use("/admin", admin);
 
 
 app.use(function (err, req, res, next) {
