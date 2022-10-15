@@ -11,7 +11,7 @@ const port = process.env.PORT || 3000;
 const User = require('./models/User');
 const index = require('./routes/index.js');
 const auth = require("./routes/auth.js");
-const admin = require("./routes/admin");
+const admin = require("./routes/admin.js");
 const discordAPI = require("./routes/DiscordAPI.js");
 
 
