@@ -10,6 +10,8 @@ const port = process.env.PORT || 3000;
 
 const User = require('./models/User');
 const index = require('./routes/index.js');
+const auth = require("./routes/auth.js");
+const admin = require("./routes/admin.js");
 const discordAPI = require("./routes/DiscordAPI.js");
 
 
@@ -37,14 +39,16 @@ app.set('view engine', 'ejs');
 
 app.use('/', index);
 app.use("/api", discordAPI);
+app.use("/auth", auth);
+app.use("/admin", admin);
 
 
-app.use(function(err, req, res, next) {
-    res.locals.message = err.message;
-    res.locals.error = req.app.get('env') === 'development' ? err : {};
-    res.status(err.status || 500);
-    res.render('error');
-  });
+app.use(function (err, req, res, next) {
+  res.locals.message = err.message;
+  res.locals.error = req.app.get('env') === 'development' ? err : {};
+  res.status(err.status || 500);
+  res.render('error');
+});
 
 app.listen(port, () => {
     console.log('server running on port ' + port);
