@@ -51,5 +51,5 @@ app.use(function (err, req, res, next) {
 });
 
 app.listen(port, () => {
-  console.log('server running on port ' + port);
-})
+    console.log('server running on port ' + port);
+});
