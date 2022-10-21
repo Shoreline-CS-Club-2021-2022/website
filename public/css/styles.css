@@ -1,0 +1,83 @@
+/* Sizing */
+
+html, body {
+    height: 100%;
+}
+
+main {
+    min-height: calc(100% - 200px);
+}
+
+/* Colors */
+
+h1, h2 {
+    color: #00685e;
+}
+
+.bg-secondary {
+    background-color: #dedede !important;
+}
+
+.bg-pine {
+    background-color: #00685f !important;
+    color: #ffffff;
+}
+
+.bg-pine h1, .bg-pine h2 {
+    color: #ffffff;
+}
+
+.border-pine {
+    border-color: #00685f !important;
+}
+
+.bg-footer {
+    background-color: #1c1c1c !important;
+}
+
+/* Text */
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Libre Franklin,Tahoma,Verdana,Segoe,Trebuchet MS,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Geneva,Arial,sans-serif;
+    font-weight: 600;
+}
+
+h1 {
+    font-weight: 900;
+}
+
+@media (min-width: 768px) {
+    h1 {
+        font-size: 3.4375rem;
+        line-height: 1.16;
+    }
+
+    h2 {
+        font-size: 2rem;
+        line-height: 1.25;
+    }
+}
+
+/* Pictures Area */
+
+.picture-area {
+    height: 320px;
+}
+
+@media (min-width: 576px) {
+    .picture-area {
+        height: 480px;
+    }
+}
+
+@media (min-width: 768px) {
+    .picture-area {
+        height: 600px;
+    }
+}
+
+@media (min-width: 992px) {
+    .picture-area {
+        height: 800px;
+    }
+}
