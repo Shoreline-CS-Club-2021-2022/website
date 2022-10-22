@@ -5,14 +5,14 @@ exports.login_page = (req, res) => {
     res.render('login');
 }
 
-exports.login = function (req, res) {
+exports.login = function (req, res, next) {
     passport.authenticate("local", function (err, user, info) {
         if (err) {
-            res.json({ success: false, message: err });
+            next(err);
         }
         else {
             if (!user) {
-                res.json({ success: false, message: info.message });
+                next(info);
             }
             else {
                 res.json({ success: true, message: "Authentication successful"});
@@ -25,15 +25,15 @@ exports.register_page = (req, res) => {
     res.render('register');
 }
 
-exports.register = function (req, res) {
+exports.register = function (req, res, next) {
     User.register(new User({ username: req.body.username }), req.body.password, function (err, user) {
         if (err) {
-            res.json({ success: false, message: "Your account could not be saved. Error: " + err });
+            next(err);
         }
         else {
             req.login(user, (er) => {
                 if (er) {
-                    res.json({ success: false, message: er });
+                    next(er);
                 }
                 else {
                     res.json({ success: true, message: "Your account has been saved" });
@@ -42,3 +42,12 @@ exports.register = function (req, res) {
         }
     });
 }
+
+exports.logout = function (req, res, next) {
+    req.logout(function (err) {
+        if (err) {
+            next(err)
+        }
+    });
+    res.redirect("/");
+};
