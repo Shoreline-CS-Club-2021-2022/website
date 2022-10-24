@@ -21,5 +21,59 @@
     </div>
   </div>
 </div>
+<!--Projects Container-->
+<div class="container-fluid py-md-5 text-md-center bg-secondary">
+  <h1>Projects</h1>
+  <!--Indicators-->
+  <!--Carousel-->
+  <div id="projects-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
+    <ol class="carousel-indicators">
+      <li data-bs-target="projects-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></li>
+      <li data-bs-target="projects-carousel" data-bs-slide-to="1" aria-label="Slide 2"></li>
+    </ol>
+    <div class="carousel-inner" style="height: 425px; border: 2px solid var(--primary-green); background-color: var(--secondary-green);">
+      <div class="carousel-item active" style="height: inherit">
+        <div class="container" style="height: inherit">
+          <div class="row align-items-center" style="height: 50%;">
+            <div class="col"><%- include("partials/item") %></div>
+            <div class="col"><%- include("partials/item") %></div>
+            <div class="col"><%- include("partials/item") %></div>
+          </div>
+          <div class="row align-items-center" style="height: 50%;">
+            <div class="col"><%- include("partials/item") %></div>
+            <div class="col"><%- include("partials/item") %></div>
+            <div class="col"><%- include("partials/item") %></div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item" style="height: inherit">
+        <div class="container" style="height: inherit">
+          <div class="row align-items-center" style="height: 50%;">
+            <div class="col"><%- include("partials/item") %></div>
+            <div class="col"><%- include("partials/item") %></div>
+            <div class="col"><%- include("partials/item") %></div>
+          </div>
+          <div class="row align-items-center" style="height: 50%;">
+            <div class="col"><%- include("partials/item") %></div>
+            <div class="col"><%- include("partials/item") %></div>
+            <div class="col"><%- include("partials/item") %></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Slide Controls-->
+    <button class="carousel-control-prev" type="button" data-bs-target="#projects-carousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true" style="background-color: var(--primary-green)"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#projects-carousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true" style="background-color: var(--primary-green)"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  
+<!--This works, but isn't fully functional or mobile-accessible yet.-->
 
+</div>
+<!--Projects Container End-->
 <%- include("partials/footer") %>
