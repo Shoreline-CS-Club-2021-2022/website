@@ -2,7 +2,7 @@ const passport = require("passport");
 const User = require('../models/User');
 
 exports.login_page = (req, res) => {
-    res.render('login');
+    res.render('login', { message : false });
 }
 
 exports.login = function (req, res, next) {
@@ -12,10 +12,10 @@ exports.login = function (req, res, next) {
         }
         else {
             if (!user) {
-                next(info);
+                res.render('login', { message : "Incorrect username/password" });
             }
             else {
-                res.json({ success: true, message: "Authentication successful"});
+                res.redirect('/');
             }
         }
     })(req, res);
@@ -36,7 +36,7 @@ exports.register = function (req, res, next) {
                     next(er);
                 }
                 else {
-                    res.json({ success: true, message: "Your account has been saved" });
+                    res.redirect('/');
                 }
             });
         }
