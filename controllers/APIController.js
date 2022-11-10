@@ -1,11 +1,13 @@
 require("dotenv").config();
 const DiscordUser = require('../models/DiscordUser');
 const DiscordServer = require('../models/DiscordServer');
+const Announcement = require('../models/Announcement')
 const async = require('async');
 
 const types = {
     user: DiscordUser,
-    server: DiscordServer
+    server: DiscordServer,
+    announcement: Announcement
 };
 
 exports.api_get = function (req, res) {
