@@ -37,8 +37,6 @@ exports.api_post = async function (req, res) {
     const type = req.body.type;
     data = req.body;
     delete data['type'];
-    console.log(data);
-    console.log(type)
     if (req.params.api_key === process.env.API_KEY) {
         if (types.hasOwnProperty(type)) {
             const new_user = new types[type](data);
