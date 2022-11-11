@@ -29,7 +29,9 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-mongoose.connect(process.env.MONGO_URL);
+if (process.env.USE_MONGO == "true") {
+  mongoose.connect(process.env.MONGO_URL);
+}
 
 passport.use(User.createStrategy());
 passport.serializeUser(User.serializeUser());
