@@ -2,24 +2,42 @@ const passport = require("passport");
 const User = require('../models/User');
 
 exports.login_page = (req, res) => {
-    res.render('login', { message : false });
+    res.render('login', { message : false, user : req.user });
 }
 
 exports.login = function (req, res, next) {
-    passport.authenticate("local", function (err, user, info) {
+    const user = new User({
+        username: req.body.username,
+        password: req.body.password
+    });
+
+    req.login(user, function (err) {
         if (err) {
             next(err);
+            res.render('login', { message : "Incorrect username/password", user : req.user });
+        } else {
+            passport.authenticate("local")(req, res, function () {
+                res.redirect("/");
+            });
         }
-        else {
-            if (!user) {
-                res.render('login', { message : "Incorrect username/password" });
-            }
-            else {
-                res.redirect('/');
-            }
-        }
-    })(req, res);
+    });
 };
+
+// function (req, res, next) {
+//     passport.authenticate("local", function (err, user, info) {
+//         if (err) {
+//             console.log(err);
+//         }
+//         else {
+//             if (!user) {
+//                 res.render('login', { message : "Incorrect username/password", user : req.user });
+//             }
+//             else {
+//                 res.redirect('/');
+//             }
+//         }
+//     })(req, res);
+// };
 
 exports.register_page = (req, res) => {
     res.render('register');

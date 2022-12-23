@@ -1,3 +1,5 @@
 exports.announcements_page = (req, res) => {
-    res.render('announcements');
+    res.render('announcements', {
+        user: req.user
+    });
 }

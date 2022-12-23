@@ -1,29 +1,21 @@
 <%- include("partials/header") -%>
 
-<h1>Add Project</h1>
-<form action="/admin/newproject" method="post" enctype="multipart/form-data">
-      <span class="input-group-text" id="title">Title</span>
-      <input type="text" class="form-control" name="title">
-
-      <span class="input-group-text" id="githubLink">github link</span>
-      <input type="text" class="form-control" name="githubLink">
-      <span class="input-group-text" id="techStacks">Tech Stacks</span>
-      <input type="text" class="form-control" name="techStacks">
-      <span class="input-group-text" id="demoLink">Demo link</span>
-      <input type="text" class="form-control" name="demoLink">
-    <div class="input-group">
-      <span class="input-group-text">Main description</span>
-      <textarea rows="6" class="form-control" name="description"></textarea>
-      <label class="input-group-text" for="images">Image</label>
-      <input type="file" class="form-control" name="images" required multiple>
-    <div class="form-check">
-      <label class="form-check-label" for="isFeatured">
-        Featured Project
-      </label>
-      <input class="form-check-input" type="checkbox" value="true" name="isFeatured">
-
-    <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
-  </form>
+    <h1>Add Project</h1>
+    <form action="/admin/newproject" method="post" enctype="multipart/form-data">
+        <span class="input-group-text" id="title">Title</span>
+        <input type="text" class="form-control" name="title">
+        <span class="input-group-text" id="githubLink">github link</span>
+        <input type="text" class="form-control" name="githubLink">
+        <span class="input-group-text" id="techStacks">Tech Stacks</span>
+        <input type="text" class="form-control" name="techStacks">
+        <span class="input-group-text" id="demoLink">Demo link</span>
+        <input type="text" class="form-control" name="demoLink">
+        <span class="input-group-text">Main description</span>
+        <textarea rows="6" class="form-control" name="description"></textarea>
+        <label class="input-group-text" for="images">Image</label>
+        <input type="file" class="form-control" name="images" required multiple>
+        <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
+    </form>
 
 
-<%- include("partials/footer") %>
+    <%- include("partials/footer") %>
