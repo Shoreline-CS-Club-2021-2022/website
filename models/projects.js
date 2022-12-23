@@ -7,8 +7,7 @@ const projectSchema = new Schema({
     techStacks: String,
     demoLink: String,
     description: String,
-    images: Array,
-    isFeatured: Boolean
+    images: Array
 });
 
 module.exports = mongoose.model("Project", projectSchema);
