@@ -28,18 +28,14 @@
   <div id="projects-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
     <!--Carousel Inner Start-->
     <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="https://via.placeholder.com/2000?text=1" class="img-fluid">
+      <%  for (let i = 0; i < Projects.length; i++) {  %>
+        <% let project = Projects[i]; %>
+      <div class="carousel-item <%if (i == 0) {%> active <% } %>">
+        <a href="/projects/<%=project.id%>">
+          <img class="img-fluid" src="/<%=project.images[0].path%>" alt="Card image cap">
+        </a>
       </div>
-      <div class="carousel-item">
-        <img src="https://via.placeholder.com/2000?text=2" class="img-fluid">
-      </div>
-      <div class="carousel-item">
-        <img src="https://via.placeholder.com/2000?text=3" class="img-fluid">
-      </div>
-      <div class="carousel-item">
-        <img src="https://via.placeholder.com/2000?text=4" class="img-fluid">
-      </div>
+      <% } %>
     </div>
     <!--Carousel Inner End-->
     <!--Carousel Buttons Start-->
@@ -56,4 +52,4 @@
   <!--Carousel-->
 </div>
 <!--Projects Container End-->
-<%- include("partials/footer") %>
+<%- include("partials/footer") -%>
