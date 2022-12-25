@@ -3,7 +3,8 @@
 <div class="title-box">
     <h1 class="page-title">Announcements</h1>
 </div>
-<% announcements.forEach(function(announcement) { %>
+<% for (let i = announcements.length; i >= 0; i--) { %>
+    <% let announcement = announcemtns[i]; %>
 <div class="accordion outer-box">
     <label class="header-expand">
         <h2 class="announcement-date"><%=announcement.date%></h2>
@@ -14,7 +15,7 @@
         <p class="announcement-text"><%=announcement.message%></p>
     </div>
 </div>
-<% }); %>
+<% } %>
 
 <!--Can't load Js files externally. Needs fixing.-->
 <script src="/scripts/accordion.js"> </script>
