@@ -40,7 +40,7 @@ exports.login = function (req, res, next) {
 // };
 
 exports.register_page = (req, res) => {
-    res.render('register');
+    res.render('register', {user : req.user });
 }
 
 exports.register = function (req, res, next) {
