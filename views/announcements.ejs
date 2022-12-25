@@ -3,23 +3,19 @@
 <div class="title-box">
     <h1 class="page-title">Announcements</h1>
 </div>
-<%- include("partials/announcement") %>
-
-<%- include("partials/announcement") %>
-
-<%- include("partials/announcement") %>
-
-<%- include("partials/announcement") %>
+<% announcements.forEach(function(announcement) { %>
+<div class="accordion outer-box">
+    <label class="header-expand">
+        <h2 class="announcement-date"><%=announcement.date%></h2>
+        <i class="expand-icon fa-solid fa-plus fa-xl"></i>
+    </label>
+    <div class="inner-box">
+        <h2 class="announcement-author"><%=announcement.author%></h2>
+        <p class="announcement-text"><%=announcement.message%></p>
+    </div>
+</div>
+<% }); %>
 
 <!--Can't load Js files externally. Needs fixing.-->
-<script>
-    const accordion = document.getElementsByClassName('accordion'); // List of all accordions on page
-
-    for (i = 0; i < accordion.length; i++) {
-        accordion[i].addEventListener('click', function() {
-            this.classList.toggle('active')
-        })
-    }
-
-</script>
+<script src="/scripts/accordion.js"> </script>
 <%- include("partials/footer") %>
