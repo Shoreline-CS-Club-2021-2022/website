@@ -20,5 +20,5 @@ exports.about_page = function (req, res) {
 }
 
 exports.discord = function (req, res) {
-    res.redirect("//discord.gg/Qq8wu8N4jH");
+    res.redirect("//discord.gg/qg2ctQRTdW");
 }
