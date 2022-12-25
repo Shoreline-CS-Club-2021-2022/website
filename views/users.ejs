@@ -2,4 +2,19 @@
 
 <h1>Users</h1>
 
+<table>
+    <tr>
+      <th>Username</th>
+      <th>isAdmin</th>
+      <th>Delete</th>
+    </tr>
+    <% Users.forEach(function(users) {  %>
+    <tr>
+      <td><%=users.username %></td>
+      <td><input type="checkbox" <% if (users.isAdmin) { %>checked<%}%>></td>
+      <td><a href="/delUser/">X</a></td>
+    </tr>
+    <% }); %>
+  </table> 
+
 <%- include("partials/footer") %>
