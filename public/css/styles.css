@@ -133,3 +133,80 @@ h1 {
         background-color: unset;
     }
 }
+
+
+
+/* Announcements */
+.title-box {
+    background-color: var(--primary-white);
+    padding-bottom: 12px;
+}
+
+.page-title {
+    display: inline;
+    background-color: var(--primary-white);
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+}
+
+.announcements-container {
+    margin-bottom: 25px;
+    height: 100%;
+}
+
+.header-expand {
+    align-items: center;
+    width: 100%;
+    cursor: pointer;
+}
+
+.announcement-date {
+    color: var(--primary-white);
+    padding: 5px 0 0 15px;
+    float: left;
+}
+
+.expand-icon {
+    size: 25px;
+    margin-right: 20px;
+    margin-top: 10px;
+    float: right;
+}
+
+.outer-box {
+    margin: auto;
+    margin-top: 20px;
+    background-color: var(--primary-green);
+    border: 2px solid var(--primary-green);
+    border-radius: 8px 8px 3px 3px;
+    width: 80vw;
+}
+
+.accordion .inner-box {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--primary-white);
+    padding-left: 2%;
+    padding-right: 2%;
+    height: 0;
+    overflow: hidden;
+    transition: .5s;
+}
+
+/* Announcement Accordion Hide/Unhide */
+
+.accordion.active .inner-box {
+    height: auto;
+    overflow: none;
+}
+
+.expand-icon {
+    color: var(--primary-white);
+    font: normal normal normal 30px/1 FontAwesome;
+    content: "\2b";
+}
+
+.accordion.active .expand-icon{
+    font: normal normal normal 30px/1 FontAwesome;
+    content: "\f068"
+}
