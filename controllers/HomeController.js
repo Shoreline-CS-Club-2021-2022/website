@@ -18,3 +18,7 @@ exports.about_page = function (req, res) {
         user: req.user
     });
 }
+
+exports.discord = function (req, res) {
+    res.redirect("//https://discord.gg/Qq8wu8N4jH");
+}

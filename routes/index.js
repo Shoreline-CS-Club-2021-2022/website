@@ -15,4 +15,6 @@ router.get("/announcements", announcements_controller.announcements_page);
 
 router.get("/contact", contact_controller.contact_page);
 
+router.get("/discord", home_controller.discord);
+
 module.exports = router;
