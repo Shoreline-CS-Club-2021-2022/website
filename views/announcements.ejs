@@ -1,5 +1,25 @@
+
 <%- include("partials/header", {page: 'announcements'}) -%>
+<div class="title-box">
+    <h1 class="page-title">Announcements</h1>
+</div>
+<%- include("partials/announcement") %>
 
-<h1>Announcements</h1>
+<%- include("partials/announcement") %>
 
+<%- include("partials/announcement") %>
+
+<%- include("partials/announcement") %>
+
+<!--Can't load Js files externally. Needs fixing.-->
+<script>
+    const accordion = document.getElementsByClassName('accordion'); // List of all accordions on page
+
+    for (i = 0; i < accordion.length; i++) {
+        accordion[i].addEventListener('click', function() {
+            this.classList.toggle('active')
+        })
+    }
+
+</script>
 <%- include("partials/footer") %>
