@@ -9,9 +9,9 @@
       <th>Delete</th>
     </tr>
     <% Users.forEach(function(users) {  %>
-    <tr>
+    <tr> 
       <td><%=users.username %></td>
-      <td><input type="checkbox" <% if (users.isAdmin) { %>checked<%}%>></td>
+      <td><form action="/update/isAdmin" method="post"></form><input type="checkbox" <% if (users.isAdmin) { %>checked<%}%> value="<%=item._id%>" onChange="this.form.submit()"></form></td>
       <td><a href="/delUser/">X</a></td>
     </tr>
     <% }); %>
