@@ -1,7 +1,7 @@
 <%- include("partials/header", {page: 'login'}) -%>
 
 <h1>Login</h1>
-<form action="/auth/login/password" method="post">
+<form action="/auth/login" method="post">
     <section>
         <label for="username">Username</label>
         <input id="username" name="username" type="text" autocomplete="username" required autofocus>
@@ -12,7 +12,6 @@
     </section>
     <button type="submit">Login</button>
 </form>
-<%- user -%>
 <% if (message) { %>
     <p><%= message %></p>
 <% } %>

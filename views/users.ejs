@@ -1,20 +1,28 @@
 <%- include("partials/header") -%>
 
-<h1>Users</h1>
+    <h1>Users</h1>
 
-<table>
-    <tr>
-      <th>Username</th>
-      <th>isAdmin</th>
-      <th>Delete</th>
-    </tr>
-    <% Users.forEach(function(users) {  %>
-    <tr> 
-      <td><%=users.username %></td>
-      <td><form action="/update/isAdmin" method="post"></form><input type="checkbox" <% if (users.isAdmin) { %>checked<%}%> value="<%=item._id%>" onChange="this.form.submit()"></form></td>
-      <td><a href="/delUser/">X</a></td>
-    </tr>
-    <% }); %>
-  </table> 
+    <table>
+        <tr>
+            <th>Username</th>
+            <th>isAdmin</th>
+            <th>Delete</th>
+        </tr>
+        <% Users.forEach(function(user) { %>
+            <tr>
+                <td>
+                    <%=user.username %>
+                </td>
+                <td>
+                    <form action="/admin/update" method="post">
+                        <input type="hidden" name="userid" value="<%=user._id%>"></input>
+                        <input type="hidden" name="isAdmin" value="<%= user.isAdmin %>"></input>
+                        <input type="checkbox" onChange="this.form.submit()" <% if (user.isAdmin) { %>checked<%}%>>
+                    </form>
+                </td>
+                <td><a href="/delUser/">X</a></td>
+            </tr>
+            <% }); %>
+    </table>
 
-<%- include("partials/footer") %>
+    <%- include("partials/footer") %>
