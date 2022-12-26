@@ -49,3 +49,19 @@ exports.update_user = function (req, res) {
     res.redirect("/auth/login");
   }
 };
+
+exports.delete_user = function (req, res) {
+  if (req.user?.isAdmin) {
+    const user_id = req.body.id;
+    User.findByIdAndRemove(user_id, function (err, docs) {
+      if (err) {
+        res.send(err)
+      }
+      else {
+        res.redirect(req.header('Referer'));
+      }
+    });
+  } else {
+    res.redirect("/auth/login");
+  }
+}

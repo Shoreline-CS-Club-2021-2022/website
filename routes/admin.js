@@ -27,5 +27,6 @@ router.post("/edit/:projectID", upload.array("images", 12), projects_controller.
 router.post("/delete/:projectID", projects_controller.delete_project);
 router.post("/delimage/:projectID/:imageIndex", projects_controller.delete_image);
 router.post("/update", admin_controller.update_user);
+router.post("/delete", admin_controller.delete_user);
 
 module.exports = router;

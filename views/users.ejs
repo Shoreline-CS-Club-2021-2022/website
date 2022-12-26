@@ -20,7 +20,12 @@
                         <input type="checkbox" onChange="this.form.submit()" <% if (user.isAdmin) { %>checked<%}%>>
                     </form>
                 </td>
-                <td><a href="/delUser/">X</a></td>
+                <td>
+                    <form action="/admin/delete" method="post" onSubmit="return confirm('Are you sure you wish to delete?');">
+                        <input type="hidden" name="id" value="<%=user._id%>"></input>
+                        <button type="submit" value="delete">X</button>
+                    </form>
+                </td>
             </tr>
             <% }); %>
     </table>
