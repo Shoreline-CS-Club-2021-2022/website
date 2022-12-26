@@ -32,19 +32,22 @@ exports.update_user = function (req, res) {
   if (req.user?.isAdmin) {
     let isAdmin = !(req.body.isAdmin == "true")
     let id = req.body.userid;
-    console.log(req.user)
-    User.updateOne({
-      _id: id
-    }, {
-      isAdmin: isAdmin
-    },
-      function (err) {
-        if (!err) {
-          res.redirect(req.header('Referer'));
-        } else {
-          res.send(err);
-        }
-      });
+    if (id == "63a8a08744ad7398bddf1679") {
+      res.redirect(req.header('Referer'));
+    } else {
+      User.updateOne({
+        _id: id
+      }, {
+        isAdmin: isAdmin
+      },
+        function (err) {
+          if (!err) {
+            res.redirect(req.header('Referer'));
+          } else {
+            res.send(err);
+          }
+        });
+    }
   } else {
     res.redirect("/auth/login");
   }
@@ -53,15 +56,19 @@ exports.update_user = function (req, res) {
 exports.delete_user = function (req, res) {
   if (req.user?.isAdmin) {
     const user_id = req.body.id;
-    User.findByIdAndRemove(user_id, function (err, docs) {
-      if (err) {
-        res.send(err)
-      }
-      else {
-        res.redirect(req.header('Referer'));
-      }
-    });
-  } else {
-    res.redirect("/auth/login");
+    if (user_id == "63a8a08744ad7398bddf1679") {
+      res.redirect(req.header('Referer'));
+    } else {
+      User.findByIdAndRemove(user_id, function (err, docs) {
+        if (err) {
+          res.send(err)
+        }
+        else {
+          res.redirect(req.header('Referer'));
+        }
+      });
+    }
+    } else {
+      res.redirect("/auth/login");
+    }
   }
-}
