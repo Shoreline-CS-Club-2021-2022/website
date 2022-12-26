@@ -68,7 +68,7 @@ exports.delete_user = function (req, res) {
         }
       });
     }
-    } else {
-      res.redirect("/auth/login");
-    }
+  } else {
+    res.redirect("/auth/login");
   }
+}
