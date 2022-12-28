@@ -137,9 +137,25 @@ h1 {
 
 
 /* Announcements */
+
 .title-box {
     background-color: var(--primary-white);
     padding-bottom: 12px;
+    padding-left: 25px;
+}
+
+.announcements-box {
+    padding-top: 30px;
+}
+
+.page-numbers-box {
+    background-color: var(--primary-white);
+    height: 90px;
+    /* NOTE: Not great. Needs fixing. */
+    position: absolute;
+    bottom: 144px;
+    right: 0;
+    left: 0;
 }
 
 .page-title {
@@ -147,11 +163,6 @@ h1 {
     background-color: var(--primary-white);
     border-bottom: 1px solid black;
     border-right: 1px solid black;
-}
-
-.announcements-container {
-    margin-bottom: 25px;
-    height: 100%;
 }
 
 .header-expand {
@@ -175,29 +186,28 @@ h1 {
 
 .outer-box {
     margin: auto;
-    margin-top: 20px;
+    margin-bottom: 20px;
     background-color: var(--primary-green);
     border: 2px solid var(--primary-green);
     border-radius: 8px 8px 3px 3px;
-    width: 80vw;
+    width: 80%;
 }
 
 .accordion .inner-box {
-    display: flex;
-    flex-direction: column;
     background-color: var(--primary-white);
     padding-left: 2%;
     padding-right: 2%;
-    height: 0;
     overflow: hidden;
-    transition: .5s;
+    max-height: 0;
+    transition: max-height .1s ease;
 }
 
 /* Announcement Accordion Hide/Unhide */
 
-.accordion.active .inner-box {
-    height: auto;
-    overflow: none;
+.inner-box.active {
+    max-height: 700px;
+    transition: max-height .5s ease;
+    overflow: auto;
 }
 
 .expand-icon {
@@ -209,4 +219,36 @@ h1 {
 .accordion.active .expand-icon{
     font: normal normal normal 30px/1 FontAwesome;
     content: "\f068"
+}
+
+/* Navigator */
+.page-numbers-box .row {
+    justify-content: center;
+    height: 100%;
+}
+
+.page-numbers-box a {
+    margin-right: 5px;
+    margin-left: 5px;
+    text-decoration: none;
+}
+
+.page-numbers-box a {
+    color: gray;
+}
+
+.page-numbers-box a:hover {
+    color: black;
+    transition: color .5s ease;
+}
+
+/* Small Screens */
+@media (max-width: 768px) {
+    .outer-box {
+        width: 100%;
+    }
+
+    .page-numbers {
+        display: none;
+    }
 }
