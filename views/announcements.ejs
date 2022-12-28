@@ -3,23 +3,38 @@
 <div class="title-box">
     <h1 class="page-title">Announcements</h1>
 </div>
-<%- include("partials/announcement") %>
+<div class="announcements-box">
+<!-- Load 6 announcements per page? -->
+    <%- include("partials/announcement") %>
 
-<%- include("partials/announcement") %>
+    <%- include("partials/announcement") %>
 
-<%- include("partials/announcement") %>
+    <%- include("partials/announcement") %>
 
-<%- include("partials/announcement") %>
+    <%- include("partials/announcement") %>
 
-<!--Can't load Js files externally. Needs fixing.-->
-<script>
-    const accordion = document.getElementsByClassName('accordion'); // List of all accordions on page
+    <%- include("partials/announcement") %>
 
-    for (i = 0; i < accordion.length; i++) {
-        accordion[i].addEventListener('click', function() {
-            this.classList.toggle('active')
-        })
-    }
-
-</script>
+    <%- include("partials/announcement") %>
+</div>
+<div class="page-numbers-box container-fluid">
+    <div class="row align-items-center">
+        <div class="col"></div>
+        <div class="newer-button col">
+            <p>Newer</p>
+        </div>
+        <div class="page-numbers col-3 text-center">
+            <a href="">1</a>
+            <a href="">2</a>
+            <a href="">3</a>
+            <a href="">4</a>
+            <a href="">5</a>
+        </div>
+        <div class="older-button col text-end">
+            <p>Older</p>
+        </div>
+        <div class="col"></div>
+    </div>
+</div>
+<script src="/scripts/accordion.js" type="text/javascript"></script>
 <%- include("partials/footer") %>
