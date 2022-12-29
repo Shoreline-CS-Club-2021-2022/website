@@ -1,6 +1,6 @@
 const label = document.getElementsByClassName('header-expand'); // List of all announcement labels
 
-
+label[0].nextElementSibling.classList.toggle('active');
 
 for (i = 0; i < label.length; i++) {
     label[i].addEventListener('click', function() {
